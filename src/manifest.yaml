@@ -82,3 +82,6 @@ adapters:
     element-ui: 06-adapters/element-ui.md
     element-plus: 06-adapters/element-plus.md
     flutter-material: 06-adapters/flutter-material.md
+
+templates:
+  design-spec-init: templates/design-spec-init.md

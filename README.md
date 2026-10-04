@@ -1,4 +1,4 @@
-# 企业级前端ToB产品设计文档参照
+﻿# 企业级前端ToB产品设计文档参照
 
 一套面向企业级产品的中文设计规范与页面模式文档，内容基于 Ant Design 的设计价值观、设计原则、全局规则、基础视觉和典型页面展开。用于给AI提供基础的组件开发认知参考，版权所属归属源项目。
 
@@ -81,7 +81,8 @@
     ├── 03-ui-rules/           # 按钮、表单、列表、导航、反馈等 UI 规则
     ├── 04-page-templates/     # 详情页、数据可视化页等页面模板
     ├── 05-scenarios/          # 探索专题与具体业务场景
-    └── 06-adapters/           # 语义角色到 Ant Design、Element、Flutter 的映射
+    ├── 06-adapters/           # 语义角色到 Ant Design、Element、Flutter 的映射
+    └── templates/             # 可直接返回给用户填写的 Markdown 模板
 ```
 
 ## 使用方式
@@ -90,9 +91,9 @@
 
 如果将本项目作为 Agent Skill 使用，先读取根目录的[SKILL.md](./SKILL.md)，再按任务从[src/manifest.yaml](./src/manifest.yaml)定位需要加载的资料。Agent 应先判断页面类型和模块，再读取对应的基础规范、UI 规则、页面模板及组件库适配说明，避免一次性加载全部文档。
 
-可以通过如下方式使用本项目：
+可以通过如下Prompt在VScode AI插件中使用本项目：
 ```
-请拉取`https://github.com/Kydon-ai/frontend-design-guidelines` 这个项目，参照其index.md文档的索引，查看项目基础色彩搭配和布局规范。结合我目前的项目，确定基础基调。
+调用 $frontend-design-spec 开发一个每日打卡单界面Web应用。技术栈为Naive-UI + TypeScript + Pinia + Vue-Router。
 ```
 
 ## 项目参考来源
