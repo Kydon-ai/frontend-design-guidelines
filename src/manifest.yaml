@@ -1,0 +1,84 @@
+version: 1
+name: frontend-design-spec
+language: zh-CN
+description: >-
+  面向企业级 Web、移动端和桌面客户端 UI 任务的设计资料路由清单。
+  Agent 应先判断页面类型和模块，再按需加载对应资料。
+
+entrypoints:
+  skill: ../../SKILL.md
+  index: ../../index.md
+  readme: ../../README.md
+
+reading_order:
+  - id: context
+    path: 00-context
+    purpose: 了解设计体系背景、价值观、模式概览和实践案例。
+    load_when:
+      - 用户需要解释设计依据
+      - 任务范围不清，需要建立上下文
+  - id: principles
+    path: 01-principles
+    purpose: 将亲密性、对齐、对比、重复和交互连续性转化为页面决策。
+    load_when:
+      - 需要确定信息层级、间距、对齐或交互反馈
+  - id: foundation
+    path: 02-foundation
+    purpose: 确定色彩、字体、布局、图标、阴影、动效和可视化基础。
+    load_when:
+      - 新建或修改全局设计变量
+      - 页面需要视觉规范或响应式适配
+  - id: ui-rules
+    path: 03-ui-rules
+    purpose: 选择按钮、表单、数据展示、列表、导航和反馈组件。
+    load_when:
+      - 任务涉及具体交互组件或信息表达方式
+  - id: page-templates
+    path: 04-page-templates
+    purpose: 参考详情页和数据可视化页的页面级结构。
+    load_when:
+      - 用户新增或重构页面骨架
+  - id: scenarios
+    path: 05-scenarios
+    purpose: 按探索、表单、工作台、列表、空状态、结果和异常等场景复用模式。
+    load_when:
+      - 页面属于已覆盖的业务场景
+  - id: adapters
+    path: 06-adapters
+    purpose: 将语义角色转换为实际组件库中的组件和实现策略。
+    load_when:
+      - 项目明确使用 Ant Design、Element UI、Element Plus 或 Flutter Material
+
+page_types:
+  - id: overview
+    keywords: [概览, 首页, Dashboard, 工作台, 监控]
+    references: [05-scenarios/research-overview.zh-CN.md, 05-scenarios/research-workbench.zh-CN.md]
+  - id: navigation
+    keywords: [导航, 菜单, 面包屑, 标签页, 步骤]
+    references: [03-ui-rules/navigation.zh-CN.md, 05-scenarios/research-navigation.zh-CN.md]
+  - id: form
+    keywords: [表单, 新建, 编辑, 设置, 登录, 注册, 录入]
+    references: [03-ui-rules/data-entry.zh-CN.md, 05-scenarios/research-form.zh-CN.md]
+  - id: list
+    keywords: [列表, 表格, 搜索, 筛选, 成员管理, 批量操作]
+    references: [03-ui-rules/data-list.zh-CN.md, 03-ui-rules/data-display.zh-CN.md, 05-scenarios/research-list.zh-CN.md]
+  - id: detail
+    keywords: [详情, 单据, 记录, 只读信息]
+    references: [04-page-templates/detail-page.zh-CN.md, 03-ui-rules/data-display.zh-CN.md]
+  - id: visualization
+    keywords: [数据分析, 图表, 趋势, 指标, 可视化]
+    references: [02-foundation/visual.zh-CN.md, 04-page-templates/visualization-page.zh-CN.md]
+  - id: feedback
+    keywords: [成功, 失败, 警告, 通知, 加载, 反馈]
+    references: [03-ui-rules/feedback.zh-CN.md, 05-scenarios/research-message-and-feedback.zh-CN.md]
+  - id: empty-or-exception
+    keywords: [空状态, 无数据, 404, 403, 500, 异常, 加载失败]
+    references: [05-scenarios/research-empty.zh-CN.md, 05-scenarios/research-exception.zh-CN.md]
+
+adapters:
+  semantic_map: 06-adapters/component-role-map.md
+  libraries:
+    ant-design: 06-adapters/ant-design.md
+    element-ui: 06-adapters/element-ui.md
+    element-plus: 06-adapters/element-plus.md
+    flutter-material: 06-adapters/flutter-material.md
