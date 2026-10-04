@@ -1,0 +1,6 @@
+interface:
+  display_name: "企业级前端设计指导"
+  short_description: "按 ToB 设计规范设计和评审企业级页面"
+  default_prompt: "使用 $enterprise-frontend-design 设计一个企业级数据列表页"
+policy:
+  allow_implicit_invocation: true
